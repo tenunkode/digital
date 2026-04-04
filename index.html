@@ -1,0 +1,2198 @@
+<!--
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TenunKode Digital – Menenun Ide Menjadi Realitas Digital</title>
+    <meta
+      name="description"
+      content="TenunKode Digital – Perpaduan presisi kode dan estetika desain UI/UX untuk menciptakan pengalaman digital yang tak terlupakan bagi bisnis Anda."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#1A3A4A",
+              orange: "#D37232",
+              tan: "#E6B363",
+              offwhite: "#F9F9F7",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        --navy: #1a3a4a;
+        --orange: #d37232;
+        --tan: #e6b363;
+        --offwhite: #f9f9f7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--offwhite);
+        color: var(--navy);
+      }
+
+      /* Reduced-motion support */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Woven fabric geometric pattern */
+      .hero-pattern {
+        background-color: var(--offwhite);
+        background-image:
+          linear-gradient(rgba(26, 58, 74, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(26, 58, 74, 0.04) 1px, transparent 1px),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(211, 114, 50, 0.06) 0%,
+            transparent 60%
+          );
+        background-size:
+          32px 32px,
+          32px 32px,
+          100% 100%;
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp 0.7s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.15s;
+      }
+      .delay-2 {
+        animation-delay: 0.3s;
+      }
+      .delay-3 {
+        animation-delay: 0.45s;
+      }
+      .delay-4 {
+        animation-delay: 0.6s;
+      }
+
+      /* Navbar scroll shadow */
+      .navbar-scrolled {
+        box-shadow: 0 2px 24px rgba(26, 58, 74, 0.12);
+      }
+
+      /* Service card hover */
+      .service-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 48px rgba(26, 58, 74, 0.14);
+      }
+
+      /* Button hover */
+      .btn-primary {
+        background: var(--orange);
+        color: #fff;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
+      }
+      .btn-primary:hover {
+        background: #bf6524;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(211, 114, 50, 0.35);
+      }
+      .btn-outline {
+        border: 2px solid var(--navy);
+        color: var(--navy);
+        transition:
+          background 0.25s,
+          color 0.25s,
+          transform 0.2s;
+      }
+      .btn-outline:hover {
+        background: var(--navy);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .btn-navy {
+        background: var(--navy);
+        color: #fff;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
+      }
+      .btn-navy:hover {
+        background: #122c38;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(26, 58, 74, 0.35);
+      }
+
+      /* Timeline connector */
+      .step-line {
+        position: absolute;
+        top: 28px;
+        left: calc(50% + 28px);
+        width: calc(100% - 56px);
+        height: 2px;
+        background: linear-gradient(90deg, var(--tan), var(--orange));
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 400px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!- - ============================
+     NAVBAR
+============================= - ->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur-sm transition-shadow duration-300"
+      aria-label="Navigasi utama"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <!- - Logo - ->
+          <a
+            href="#hero"
+            class="font-display font-bold text-xl md:text-2xl text-navy"
+            aria-label="TenunKode Digital – Beranda"
+          >
+            @<span class="text-orange">Tenun</span>Digital
+          </a>
+
+          <!- - Desktop links - ->
+          <div
+            class="hidden md:flex items-center gap-8 font-body text-sm font-medium text-navy/80"
+          >
+            <a
+              href="#layanan"
+              class="hover:text-orange transition-colors duration-200"
+              >Layanan</a
+            >
+            <a
+              href="#proses"
+              class="hover:text-orange transition-colors duration-200"
+              >Proses</a
+            >
+            <a
+              href="#portofolio"
+              class="hover:text-orange transition-colors duration-200"
+              >Portofolio</a
+            >
+            <a
+              href="#kontak"
+              class="hover:text-orange transition-colors duration-200"
+              >Kontak</a
+            >
+          </div>
+
+          <!- - CTA - ->
+          <a
+            href="#kontak"
+            class="hidden md:inline-flex items-center gap-2 btn-primary px-5 py-2.5 rounded-full font-body font-semibold text-sm"
+          >
+            <i class="fa-solid fa-paper-plane text-xs"></i> Mulai Konsultasi
+          </a>
+
+          <!- - Hamburger - ->
+          <button
+            id="hamburger"
+            class="md:hidden text-navy p-2"
+            aria-label="Buka menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <i id="hamburger-icon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!- - Mobile menu - ->
+      <div id="mobile-menu" role="menu">
+        <div
+          class="max-w-7xl mx-auto px-6 pb-4 flex flex-col gap-3 font-body text-sm font-medium text-navy border-t border-navy/10"
+        >
+          <a
+            href="#layanan"
+            class="pt-3 hover:text-orange transition-colors"
+            role="menuitem"
+            >Layanan</a
+          >
+          <a
+            href="#proses"
+            class="hover:text-orange transition-colors"
+            role="menuitem"
+            >Proses</a
+          >
+          <a
+            href="#portofolio"
+            class="hover:text-orange transition-colors"
+            role="menuitem"
+            >Portofolio</a
+          >
+          <a
+            href="#kontak"
+            class="hover:text-orange transition-colors"
+            role="menuitem"
+            >Kontak</a
+          >
+          <a
+            href="#kontak"
+            class="mt-1 btn-primary px-5 py-2.5 rounded-full font-semibold text-center text-white"
+            role="menuitem"
+          >
+            Mulai Konsultasi
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!- - ============================
+     HERO
+============================= - ->
+    <section
+      id="hero"
+      class="hero-pattern pt-32 pb-24 md:pt-44 md:pb-36 min-h-screen flex items-center"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <p
+          class="fade-up inline-flex items-center gap-2 text-orange font-body font-semibold text-sm tracking-widest uppercase mb-6 bg-orange/10 px-4 py-1.5 rounded-full"
+        >
+          <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> Digital Agency
+        </p>
+        <h1
+          class="fade-up delay-1 font-display font-black text-4xl md:text-6xl lg:text-7xl text-navy leading-tight mb-6"
+        >
+          Menenun Ide<br class="hidden sm:block" />
+          <span class="text-orange italic">Menjadi Realitas</span> Digital
+        </h1>
+        <p
+          class="fade-up delay-2 font-body text-navy/65 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Perpaduan presisi kode dan estetika desain UI/UX untuk menciptakan
+          pengalaman digital yang tak terlupakan bagi bisnis Anda.
+        </p>
+        <div
+          class="fade-up delay-3 flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#kontak"
+            class="btn-primary px-8 py-3.5 rounded-full font-body font-semibold text-sm shadow-lg"
+          >
+            <i class="fa-solid fa-paper-plane mr-2"></i> Mulai Konsultasi
+          </a>
+          <a
+            href="#portofolio"
+            class="btn-outline px-8 py-3.5 rounded-full font-body font-semibold text-sm"
+          >
+            Lihat Karya Kami <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <!- - Decorative woven icon row - ->
+        <div class="fade-up delay-4 mt-20 flex justify-center gap-8 opacity-30">
+          <i class="fa-solid fa-layer-group text-navy text-2xl"></i>
+          <i class="fa-solid fa-code text-orange text-2xl"></i>
+          <i class="fa-solid fa-palette text-tan text-2xl"></i>
+          <i class="fa-solid fa-mobile-screen text-navy text-2xl"></i>
+          <i class="fa-solid fa-rocket text-orange text-2xl"></i>
+        </div>
+      </div>
+    </section>
+
+    <!- - ============================
+     PHILOSOPHY
+============================= - ->
+    <section
+      id="portofolio"
+      class="bg-navy py-24 md:py-32"
+      aria-labelledby="philosophy-heading"
+    >
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <p
+          class="font-body font-semibold text-tan text-sm tracking-widest uppercase mb-4"
+        >
+          Filosofi Kami
+        </p>
+        <h2
+          id="philosophy-heading"
+          class="font-display font-bold text-4xl md:text-5xl text-offwhite mb-8"
+        >
+          Mengapa <span class="italic text-tan">Tenun?</span>
+        </h2>
+        <div class="w-16 h-1 bg-orange rounded-full mx-auto mb-10"></div>
+        <p
+          class="font-body text-offwhite/75 text-lg md:text-xl leading-relaxed"
+        >
+          Layaknya sehelai kain tenun yang dibuat dengan ketelitian benang demi
+          benang, kami membangun aset digital Anda dengan dedikasi tinggi.
+          <br class="hidden md:block" /><br class="hidden md:block" />
+          Setiap baris kode adalah fondasi, dan setiap pixel adalah identitas.
+        </p>
+
+        <!- - Stats - ->
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-xl mx-auto">
+          <div>
+            <p class="font-display font-black text-4xl text-orange">50+</p>
+            <p class="font-body text-offwhite/60 text-sm mt-1">
+              Proyek Selesai
+            </p>
+          </div>
+          <div>
+            <p class="font-display font-black text-4xl text-orange">98%</p>
+            <p class="font-body text-offwhite/60 text-sm mt-1">Klien Puas</p>
+          </div>
+          <div>
+            <p class="font-display font-black text-4xl text-orange">5+</p>
+            <p class="font-body text-offwhite/60 text-sm mt-1">
+              Tahun Pengalaman
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!- - ============================
+     SERVICES
+============================= - ->
+    <section
+      id="layanan"
+      class="bg-offwhite py-24 md:py-32"
+      aria-labelledby="services-heading"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p
+            class="font-body font-semibold text-orange text-sm tracking-widest uppercase mb-3"
+          >
+            Yang Kami Tawarkan
+          </p>
+          <h2
+            id="services-heading"
+            class="font-display font-bold text-4xl md:text-5xl text-navy"
+          >
+            Layanan <span class="italic text-orange">Unggulan</span>
+          </h2>
+          <div class="w-16 h-1 bg-orange rounded-full mx-auto mt-6"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!- - Card 1 - ->
+          <article
+            class="service-card bg-white rounded-3xl p-8 border border-navy/5 shadow-sm"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-orange/10 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-code text-orange text-2xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-navy mb-3">
+              Web Development
+            </h3>
+            <p class="font-body text-navy/60 leading-relaxed text-sm">
+              Situs web responsif dengan performa tinggi yang dibangun di atas
+              teknologi terkini.
+            </p>
+            <a
+              href="#kontak"
+              class="inline-flex items-center gap-2 mt-6 text-orange font-body font-semibold text-sm hover:gap-3 transition-all duration-200"
+            >
+              Pelajari lebih lanjut
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </article>
+
+          <!- - Card 2 - ->
+          <article
+            class="service-card bg-navy rounded-3xl p-8 border border-navy/5 shadow-sm"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-tan/20 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-pen-nib text-tan text-2xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-offwhite mb-3">
+              UI/UX Design
+            </h3>
+            <p class="font-body text-offwhite/60 leading-relaxed text-sm">
+              Antarmuka yang intuitif dan berpusat pada pengguna untuk
+              meningkatkan konversi.
+            </p>
+            <a
+              href="#kontak"
+              class="inline-flex items-center gap-2 mt-6 text-tan font-body font-semibold text-sm hover:gap-3 transition-all duration-200"
+            >
+              Pelajari lebih lanjut
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </article>
+
+          <!- - Card 3 - ->
+          <article
+            class="service-card bg-white rounded-3xl p-8 border border-navy/5 shadow-sm sm:col-span-2 lg:col-span-1"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-orange/10 flex items-center justify-center mb-6"
+            >
+              <i
+                class="fa-solid fa-mobile-screen-button text-orange text-2xl"
+              ></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-navy mb-3">
+              Mobile App Solutions
+            </h3>
+            <p class="font-body text-navy/60 leading-relaxed text-sm">
+              Aplikasi mobile kustom yang membawa bisnis Anda lebih dekat ke
+              genggaman pelanggan.
+            </p>
+            <a
+              href="#kontak"
+              class="inline-flex items-center gap-2 mt-6 text-orange font-body font-semibold text-sm hover:gap-3 transition-all duration-200"
+            >
+              Pelajari lebih lanjut
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!- - ============================
+     PROCESS
+============================= - ->
+    <section
+      id="proses"
+      class="bg-navy/5 py-24 md:py-32"
+      aria-labelledby="process-heading"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p
+            class="font-body font-semibold text-orange text-sm tracking-widest uppercase mb-3"
+          >
+            Bagaimana Kami Bekerja
+          </p>
+          <h2
+            id="process-heading"
+            class="font-display font-bold text-4xl md:text-5xl text-navy"
+          >
+            Proses <span class="italic text-orange">Kami</span>
+          </h2>
+          <div class="w-16 h-1 bg-orange rounded-full mx-auto mt-6"></div>
+        </div>
+
+        <!- - Steps grid - ->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 relative">
+          <!- - Step 1 - ->
+          <div class="relative text-center">
+            <div
+              class="w-14 h-14 rounded-full bg-orange flex items-center justify-center mx-auto mb-5 shadow-lg shadow-orange/30"
+            >
+              <i class="fa-solid fa-magnifying-glass text-white text-lg"></i>
+            </div>
+            <span
+              class="font-body text-orange font-bold text-xs tracking-widest uppercase"
+              >01 · Pintal</span
+            >
+            <h3 class="font-display font-bold text-xl text-navy mt-2 mb-3">
+              Discovery
+            </h3>
+            <p class="font-body text-navy/60 text-sm leading-relaxed">
+              Memahami kebutuhan dan target audiens Anda.
+            </p>
+          </div>
+
+          <!- - Step 2 - ->
+          <div class="relative text-center">
+            <div
+              class="w-14 h-14 rounded-full bg-tan flex items-center justify-center mx-auto mb-5 shadow-lg shadow-tan/30"
+            >
+              <i class="fa-solid fa-pencil-ruler text-navy text-lg"></i>
+            </div>
+            <span
+              class="font-body text-orange font-bold text-xs tracking-widest uppercase"
+              >02 · Rakit</span
+            >
+            <h3 class="font-display font-bold text-xl text-navy mt-2 mb-3">
+              Design
+            </h3>
+            <p class="font-body text-navy/60 text-sm leading-relaxed">
+              Menyusun cetak biru dan desain visual yang estetik.
+            </p>
+          </div>
+
+          <!- - Step 3 - ->
+          <div class="relative text-center">
+            <div
+              class="w-14 h-14 rounded-full bg-navy flex items-center justify-center mx-auto mb-5 shadow-lg shadow-navy/30"
+            >
+              <i class="fa-solid fa-code text-white text-lg"></i>
+            </div>
+            <span
+              class="font-body text-orange font-bold text-xs tracking-widest uppercase"
+              >03 · Tenun</span
+            >
+            <h3 class="font-display font-bold text-xl text-navy mt-2 mb-3">
+              Development
+            </h3>
+            <p class="font-body text-navy/60 text-sm leading-relaxed">
+              Mengonversi desain menjadi produk digital yang fungsional.
+            </p>
+          </div>
+
+          <!- - Step 4 - ->
+          <div class="relative text-center">
+            <div
+              class="w-14 h-14 rounded-full bg-orange flex items-center justify-center mx-auto mb-5 shadow-lg shadow-orange/30"
+            >
+              <i class="fa-solid fa-rocket text-white text-lg"></i>
+            </div>
+            <span
+              class="font-body text-orange font-bold text-xs tracking-widest uppercase"
+              >04 · Bentang</span
+            >
+            <h3 class="font-display font-bold text-xl text-navy mt-2 mb-3">
+              Launch
+            </h3>
+            <p class="font-body text-navy/60 text-sm leading-relaxed">
+              Uji coba akhir dan peluncuran produk ke pasar luas.
+            </p>
+          </div>
+        </div>
+
+        <!- - Connecting line (desktop only) - ->
+        <div
+          class="hidden lg:flex items-center justify-between max-w-4xl mx-auto mt-0 -mt-32 mb-0 pointer-events-none select-none"
+        >
+          <!- - purely decorative dashes between icons - ->
+        </div>
+      </div>
+    </section>
+
+    <!- - ============================
+     CTA SECTION
+============================= - ->
+    <section
+      id="kontak"
+      class="bg-orange py-24 md:py-32"
+      aria-labelledby="cta-heading"
+    >
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <p
+          class="font-body font-semibold text-white/70 text-sm tracking-widest uppercase mb-4"
+        >
+          Mari Berkolaborasi
+        </p>
+        <h2
+          id="cta-heading"
+          class="font-display font-black text-4xl md:text-6xl text-white leading-tight mb-6"
+        >
+          Siap Menenun<br />
+          Masa Depan Digital Anda?
+        </h2>
+        <p
+          class="font-body text-white/75 text-lg mb-10 max-w-xl mx-auto leading-relaxed"
+        >
+          Hubungi kami hari ini dan wujudkan visi digital bisnis Anda bersama
+          tim TenunKode Digital.
+        </p>
+        <a
+          href="mailto:hello@tenunkode.id"
+          class="btn-navy inline-flex items-center gap-3 px-10 py-4 rounded-full font-body font-bold text-base shadow-2xl shadow-navy/30"
+        >
+          <i class="fa-solid fa-envelope"></i> Hubungi Kami Sekarang
+        </a>
+      </div>
+    </section>
+
+    <!- - ============================
+     FOOTER
+============================= - ->
+    <footer class="bg-navy py-10" role="contentinfo">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <p class="font-body text-offwhite/50 text-sm">
+          © @TenunKode 2026. All rights reserved.
+        </p>
+
+        <!- - Social links - ->
+        <nav class="flex items-center gap-5" aria-label="Media sosial">
+          <a
+            href="#"
+            aria-label="Instagram"
+            class="w-9 h-9 rounded-full border border-offwhite/20 flex items-center justify-center text-offwhite/50 hover:text-tan hover:border-tan transition-colors duration-200"
+          >
+            <i class="fa-brands fa-instagram text-sm"></i>
+          </a>
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            class="w-9 h-9 rounded-full border border-offwhite/20 flex items-center justify-center text-offwhite/50 hover:text-tan hover:border-tan transition-colors duration-200"
+          >
+            <i class="fa-brands fa-linkedin-in text-sm"></i>
+          </a>
+          <a
+            href="#"
+            aria-label="GitHub"
+            class="w-9 h-9 rounded-full border border-offwhite/20 flex items-center justify-center text-offwhite/50 hover:text-tan hover:border-tan transition-colors duration-200"
+          >
+            <i class="fa-brands fa-github text-sm"></i>
+          </a>
+          <a
+            href="#"
+            aria-label="Twitter/X"
+            class="w-9 h-9 rounded-full border border-offwhite/20 flex items-center justify-center text-offwhite/50 hover:text-tan hover:border-tan transition-colors duration-200"
+          >
+            <i class="fa-brands fa-x-twitter text-sm"></i>
+          </a>
+        </nav>
+      </div>
+    </footer>
+
+    <!- - ============================
+     SCRIPTS
+============================= - ->
+    <script>
+      // Navbar shadow on scroll
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("navbar-scrolled", window.scrollY > 24);
+      });
+
+      // Mobile menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let isOpen = false;
+
+      hamburger.addEventListener("click", () => {
+        isOpen = !isOpen;
+        mobileMenu.classList.toggle("open", isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+        hamburgerIcon.className = isOpen
+          ? "fa-solid fa-xmark text-xl"
+          : "fa-solid fa-bars text-xl";
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          isOpen = false;
+          mobileMenu.classList.remove("open");
+          hamburger.setAttribute("aria-expanded", false);
+          hamburgerIcon.className = "fa-solid fa-bars text-xl";
+        });
+      });
+
+      // Intersection Observer for scroll-triggered fade-up on process & service cards
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      document
+        .querySelectorAll(".service-card, #proses .text-center")
+        .forEach((el, i) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(28px)";
+          el.style.transition = `opacity .6s ease ${i * 0.12}s, transform .6s ease ${i * 0.12}s`;
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>
+-->
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TenunKode — Menenun Ide Menjadi Realitas Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#1A3A4A",
+              orange: "#D37232",
+              tan: "#E6B363",
+              cream: "#F9F9F7",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ─── Base ─── */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: #f9f9f7;
+        color: #1a3a4a;
+        overflow-x: hidden;
+      }
+
+      /* ─── Woven / geometric SVG background ─── */
+      .hero-bg {
+        background-color: #f9f9f7;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='%231A3A4A' stroke-width='0.4' stroke-opacity='0.07'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%23D37232' fill-opacity='0.12'/%3E%3Ccircle cx='60' cy='0' r='1.5' fill='%23D37232' fill-opacity='0.12'/%3E%3Ccircle cx='0' cy='60' r='1.5' fill='%23D37232' fill-opacity='0.12'/%3E%3Ccircle cx='60' cy='60' r='1.5' fill='%23D37232' fill-opacity='0.12'/%3E%3Ccircle cx='30' cy='30' r='1' fill='%23E6B363' fill-opacity='0.18'/%3E%3Cline x1='0' y1='0' x2='30' y2='30' stroke='%231A3A4A' stroke-width='0.3' stroke-opacity='0.05'/%3E%3Cline x1='60' y1='0' x2='30' y2='30' stroke='%231A3A4A' stroke-width='0.3' stroke-opacity='0.05'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E");
+      }
+
+      /* ─── Navbar glass ─── */
+      .navbar-glass {
+        background: rgba(249, 249, 247, 0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(26, 58, 74, 0.08);
+      }
+      .navbar-scroll {
+        background: rgba(249, 249, 247, 0.97) !important;
+        box-shadow: 0 2px 24px rgba(26, 58, 74, 0.1);
+      }
+
+      /* ─── Animated underline nav links ─── */
+      .nav-link {
+        position: relative;
+        color: #1a3a4a;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #d37232;
+        border-radius: 2px;
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .nav-link:hover {
+        color: #d37232;
+      }
+
+      /* ─── Buttons ─── */
+      .btn-primary {
+        background: #d37232;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 6px;
+        transition:
+          background 0.22s,
+          transform 0.22s,
+          box-shadow 0.22s;
+        box-shadow: 0 4px 14px rgba(211, 114, 50, 0.28);
+      }
+      .btn-primary:hover {
+        background: #b85e20;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(211, 114, 50, 0.38);
+      }
+      .btn-outline {
+        border: 2px solid #1a3a4a;
+        color: #1a3a4a;
+        font-weight: 600;
+        border-radius: 6px;
+        transition:
+          background 0.22s,
+          color 0.22s,
+          transform 0.22s,
+          box-shadow 0.22s;
+      }
+      .btn-outline:hover {
+        background: #1a3a4a;
+        color: #f9f9f7;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(26, 58, 74, 0.22);
+      }
+      .btn-navy {
+        background: #1a3a4a;
+        color: #f9f9f7;
+        font-weight: 600;
+        border-radius: 6px;
+        transition:
+          background 0.22s,
+          transform 0.22s,
+          box-shadow 0.22s;
+        box-shadow: 0 4px 14px rgba(26, 58, 74, 0.28);
+      }
+      .btn-navy:hover {
+        background: #0e232e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(26, 58, 74, 0.38);
+      }
+
+      /* ─── Service cards ─── */
+      .service-card {
+        background: #fff;
+        border: 1px solid rgba(26, 58, 74, 0.08);
+        border-radius: 16px;
+        padding: 2rem 1.75rem 2.25rem;
+        transition:
+          transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.28s;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #d37232, #e6b363);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 48px rgba(26, 58, 74, 0.13);
+      }
+
+      /* ─── Icon circle ─── */
+      .icon-circle {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(
+          135deg,
+          rgba(211, 114, 50, 0.12),
+          rgba(230, 179, 99, 0.18)
+        );
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+        transition: background 0.3s;
+      }
+      .service-card:hover .icon-circle {
+        background: linear-gradient(
+          135deg,
+          rgba(211, 114, 50, 0.22),
+          rgba(230, 179, 99, 0.32)
+        );
+      }
+
+      /* ─── Timeline steps ─── */
+      .step-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(249, 249, 247, 0.12);
+        border-radius: 16px;
+        padding: 1.75rem 1.5rem;
+        transition:
+          background 0.28s,
+          border-color 0.28s,
+          transform 0.28s;
+      }
+      .step-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(230, 179, 99, 0.35);
+        transform: translateY(-4px);
+      }
+      .step-number {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: rgba(230, 179, 99, 0.18);
+        line-height: 1;
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+        user-select: none;
+      }
+      .step-connector {
+        display: none;
+      }
+      @media (min-width: 1024px) {
+        .step-connector {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1;
+          padding: 0 0.5rem;
+        }
+      }
+
+      /* ─── Scroll-in animation ─── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-up.delay-1 {
+        transition-delay: 0.1s;
+      }
+      .fade-up.delay-2 {
+        transition-delay: 0.22s;
+      }
+      .fade-up.delay-3 {
+        transition-delay: 0.34s;
+      }
+      .fade-up.delay-4 {
+        transition-delay: 0.46s;
+      }
+
+      /* ─── Decorative woven stripes ─── */
+      .stripe-deco {
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 6px,
+          rgba(230, 179, 99, 0.18) 6px,
+          rgba(230, 179, 99, 0.18) 7px
+        );
+      }
+
+      /* ─── CTA Section ─── */
+      .cta-section {
+        background: linear-gradient(135deg, #d37232 0%, #c05e1a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 0 L80 80 M80 0 L0 80' stroke='%23ffffff' stroke-width='0.4' stroke-opacity='0.08'/%3E%3C/svg%3E");
+      }
+      .cta-blob {
+        position: absolute;
+        width: 480px;
+        height: 480px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+        filter: blur(60px);
+      }
+
+      /* ─── Hamburger menu ─── */
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.open {
+        display: flex;
+      }
+
+      /* ─── Hero decorative shape ─── */
+      .hero-shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      /* ─── Philosophy quote decoration ─── */
+      .quote-mark {
+        font-family: "Playfair Display", serif;
+        font-size: 8rem;
+        line-height: 0.7;
+        color: rgba(230, 179, 99, 0.18);
+        user-select: none;
+      }
+
+      /* ─── Footer ─── */
+      .social-link {
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(249, 249, 247, 0.2);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(249, 249, 247, 0.65);
+        transition:
+          background 0.22s,
+          color 0.22s,
+          border-color 0.22s,
+          transform 0.22s;
+      }
+      .social-link:hover {
+        background: #d37232;
+        color: #fff;
+        border-color: #d37232;
+        transform: translateY(-3px);
+      }
+
+      /* ─── Scrollbar ─── */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f9f9f7;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d37232;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ═══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+    <nav
+      id="navbar"
+      class="navbar-glass fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between h-[68px]">
+          <!-- Logo -->
+          <a href="#hero" class="flex items-center gap-2.5 group">
+            <img
+              src="tenunkodelogo.png"
+              alt="TenunKode"
+              class="h-8 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
+            <span
+              class="font-display font-bold text-[1.15rem] text-navy tracking-tight"
+              >TenunKode</span
+            >
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#layanan" class="nav-link text-sm">Layanan</a>
+            <a href="#proses" class="nav-link text-sm">Proses</a>
+            <a href="#portofolio" class="nav-link text-sm">Portofolio</a>
+            <a href="#kontak" class="nav-link text-sm">Kontak</a>
+          </div>
+
+          <!-- Desktop CTA -->
+          <div class="hidden md:flex items-center">
+            <a href="#kontak" class="btn-primary text-sm px-5 py-2.5"
+              >Mulai Konsultasi</a
+            >
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger"
+            class="md:hidden flex flex-col gap-1.5 p-1.5 rounded-md hover:bg-navy/5 transition-colors"
+            aria-label="Menu"
+          >
+            <span
+              class="w-6 h-0.5 bg-navy rounded transition-all duration-300"
+              id="hb1"
+            ></span>
+            <span
+              class="w-6 h-0.5 bg-navy rounded transition-all duration-300"
+              id="hb2"
+            ></span>
+            <span
+              class="w-4 h-0.5 bg-navy rounded transition-all duration-300"
+              id="hb3"
+            ></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="flex-col gap-1 pb-4 md:hidden">
+          <a
+            href="#layanan"
+            class="block px-3 py-2.5 text-sm font-medium text-navy hover:text-orange hover:bg-orange/5 rounded-lg transition-colors"
+            onclick="closeMobileMenu()"
+            >Layanan</a
+          >
+          <a
+            href="#proses"
+            class="block px-3 py-2.5 text-sm font-medium text-navy hover:text-orange hover:bg-orange/5 rounded-lg transition-colors"
+            onclick="closeMobileMenu()"
+            >Proses</a
+          >
+          <a
+            href="#portofolio"
+            class="block px-3 py-2.5 text-sm font-medium text-navy hover:text-orange hover:bg-orange/5 rounded-lg transition-colors"
+            onclick="closeMobileMenu()"
+            >Portofolio</a
+          >
+          <a
+            href="#kontak"
+            class="block px-3 py-2.5 text-sm font-medium text-navy hover:text-orange hover:bg-orange/5 rounded-lg transition-colors"
+            onclick="closeMobileMenu()"
+            >Kontak</a
+          >
+          <div class="pt-2 px-3">
+            <a
+              href="#kontak"
+              class="btn-primary text-sm px-5 py-2.5 block text-center"
+              onclick="closeMobileMenu()"
+              >Mulai Konsultasi</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+    <section
+      id="hero"
+      class="hero-pattern pt-32 pb-24 md:pt-44 md:pb-36 min-h-screen flex items-center"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <p
+          class="fade-up inline-flex items-center gap-2 text-orange font-body font-semibold text-sm tracking-widest uppercase mb-6 bg-orange/10 px-4 py-1.5 rounded-full"
+        >
+          <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> Digital Agency
+        </p>
+        <h1
+          class="fade-up delay-1 font-display font-black text-4xl md:text-6xl lg:text-7xl text-navy leading-tight mb-6"
+        >
+          Menenun Ide<br class="hidden sm:block" />
+          <span class="text-orange italic">Menjadi Realitas</span> Digital
+        </h1>
+        <p
+          class="fade-up delay-2 font-body text-navy/65 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Perpaduan presisi kode dan estetika desain UI/UX untuk menciptakan
+          pengalaman digital yang tak terlupakan bagi bisnis Anda.
+        </p>
+        <div
+          class="fade-up delay-3 flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#kontak"
+            class="btn-primary px-8 py-3.5 rounded-full font-body font-semibold text-sm shadow-lg"
+          >
+            <i class="fa-solid fa-paper-plane mr-2"></i> Mulai Konsultasi
+          </a>
+          <a
+            href="#portofolio"
+            class="btn-outline px-8 py-3.5 rounded-full font-body font-semibold text-sm"
+          >
+            Lihat Karya Kami <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <div class="fade-up delay-4 mt-20 flex justify-center gap-8 opacity-30">
+          <i class="fa-solid fa-layer-group text-navy text-2xl"></i>
+          <i class="fa-solid fa-code text-orange text-2xl"></i>
+          <i class="fa-solid fa-palette text-tan text-2xl"></i>
+          <i class="fa-solid fa-mobile-screen text-navy text-2xl"></i>
+          <i class="fa-solid fa-rocket text-orange text-2xl"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     PHILOSOPHY SECTION
+════════════════════════════════════════════ -->
+    <section
+      id="filosofi"
+      class="bg-navy relative overflow-hidden py-24 lg:py-32"
+    >
+      <!-- Background diagonal texture -->
+      <div
+        class="absolute inset-0 opacity-[0.04]"
+        style="
+          background-image: repeating-linear-gradient(
+            135deg,
+            #e6b363 0,
+            #e6b363 1px,
+            transparent 0,
+            transparent 50%
+          );
+          background-size: 28px 28px;
+        "
+      ></div>
+
+      <!-- Floating shapes -->
+      <div
+        class="absolute top-[-80px] right-[-80px] w-72 h-72 bg-tan/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[-60px] left-[-40px] w-56 h-56 bg-orange/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Left: Text -->
+          <div>
+            <div class="fade-up flex items-center gap-3 mb-6">
+              <div class="h-px w-10 bg-tan"></div>
+              <span
+                class="text-xs font-semibold tracking-[0.18em] text-tan uppercase"
+                >Filosofi Kami</span
+              >
+            </div>
+
+            <h2
+              class="fade-up delay-1 font-display text-4xl sm:text-5xl font-bold text-cream leading-tight mb-8"
+            >
+              Mengapa <em class="not-italic text-tan">Tenun</em>?
+            </h2>
+
+            <blockquote class="fade-up delay-2 relative">
+              <div class="quote-mark leading-none select-none">"</div>
+              <p class="text-cream/75 text-lg lg:text-xl leading-[1.85] -mt-6">
+                Layaknya sehelai kain tenun yang dibuat dengan ketelitian
+                <strong class="text-tan font-semibold"
+                  >benang demi benang</strong
+                >, kami membangun aset digital Anda dengan dedikasi tinggi.
+                Setiap baris kode adalah fondasi, dan setiap pixel adalah
+                identitas.
+              </p>
+            </blockquote>
+          </div>
+
+          <!-- Right: Visual representation of weaving -->
+          <div class="fade-up delay-2 flex justify-center lg:justify-end">
+            <div class="relative w-72 h-72 sm:w-80 sm:h-80">
+              <!-- Woven grid visual -->
+              <div
+                class="absolute inset-0 rounded-2xl overflow-hidden border border-cream/10"
+                style="background: rgba(249, 249, 247, 0.04)"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Horizontal threads -->
+                  <g
+                    stroke="#E6B363"
+                    stroke-opacity="0.35"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                  >
+                    <line x1="20" y1="44" x2="300" y2="44" />
+                    <line x1="20" y1="88" x2="300" y2="88" />
+                    <line x1="20" y1="132" x2="300" y2="132" />
+                    <line x1="20" y1="176" x2="300" y2="176" />
+                    <line x1="20" y1="220" x2="300" y2="220" />
+                    <line x1="20" y1="264" x2="300" y2="264" />
+                  </g>
+                  <!-- Vertical threads -->
+                  <g
+                    stroke="#D37232"
+                    stroke-opacity="0.35"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                  >
+                    <line x1="44" y1="20" x2="44" y2="300" />
+                    <line x1="88" y1="20" x2="88" y2="300" />
+                    <line x1="132" y1="20" x2="132" y2="300" />
+                    <line x1="176" y1="20" x2="176" y2="300" />
+                    <line x1="220" y1="20" x2="220" y2="300" />
+                    <line x1="264" y1="20" x2="264" y2="300" />
+                  </g>
+                  <!-- Intersection dots -->
+                  <g fill="#F9F9F7" fill-opacity="0.2">
+                    <circle cx="44" cy="44" r="5" />
+                    <circle cx="88" cy="88" r="5" />
+                    <circle cx="132" cy="132" r="5" />
+                    <circle cx="176" cy="176" r="5" />
+                    <circle cx="220" cy="220" r="5" />
+                    <circle cx="264" cy="264" r="5" />
+                    <circle cx="88" cy="44" r="3" />
+                    <circle cx="44" cy="88" r="3" />
+                    <circle cx="132" cy="44" r="3" />
+                    <circle cx="44" cy="132" r="3" />
+                    <circle cx="220" cy="44" r="3" />
+                    <circle cx="264" cy="88" r="3" />
+                  </g>
+                  <!-- Center diamond highlight -->
+                  <polygon
+                    points="160,100 220,160 160,220 100,160"
+                    fill="none"
+                    stroke="#E6B363"
+                    stroke-width="1.5"
+                    stroke-opacity="0.4"
+                  />
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="22"
+                    fill="#D37232"
+                    fill-opacity="0.22"
+                  />
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="8"
+                    fill="#E6B363"
+                    fill-opacity="0.8"
+                  />
+                </svg>
+              </div>
+
+              <!-- Floating badges -->
+              <div
+                class="absolute -top-4 -right-4 bg-orange text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-orange/30"
+              >
+                UI/UX
+              </div>
+              <div
+                class="absolute -bottom-4 -left-4 bg-cream text-navy text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"
+              >
+                Dev &amp; Code
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════════ -->
+    <section
+      id="layanan"
+      class="bg-cream py-24 lg:py-32 relative overflow-hidden"
+    >
+      <!-- Top decorative line -->
+      <div
+        class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <!-- Section Header -->
+        <div class="text-center mb-16 lg:mb-20">
+          <div class="fade-up flex items-center justify-center gap-3 mb-5">
+            <div class="h-px w-10 bg-orange"></div>
+            <span
+              class="text-xs font-semibold tracking-[0.18em] text-orange uppercase"
+              >Apa yang Kami Tawarkan</span
+            >
+            <div class="h-px w-10 bg-orange"></div>
+          </div>
+          <h2
+            class="fade-up delay-1 font-display text-4xl sm:text-5xl font-bold text-navy leading-tight"
+          >
+            Layanan <em class="not-italic text-orange">Unggulan</em>
+          </h2>
+          <p
+            class="fade-up delay-2 text-navy/55 mt-4 max-w-lg mx-auto leading-relaxed"
+          >
+            Tiga pilar layanan kami dirancang untuk membawa bisnis Anda tumbuh
+            di era digital.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Card 1 -->
+          <div class="service-card fade-up delay-1">
+            <div class="icon-circle">
+              <i class="fa-solid fa-code text-orange text-xl"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy mb-3">
+              Web Development
+            </h3>
+            <p class="text-navy/60 text-sm leading-relaxed mb-6">
+              Situs web responsif dengan performa tinggi yang dibangun di atas
+              teknologi terkini untuk memastikan pengalaman pengguna optimal.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >React</span
+              >
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >Next.js</span
+              >
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >Node.js</span
+              >
+            </div>
+          </div>
+
+          <!-- Card 2 (featured) -->
+          <div
+            class="service-card fade-up delay-2 ring-1 ring-orange/20"
+            style="background: linear-gradient(160deg, #fff 0%, #fef8f2 100%)"
+          >
+            <div class="absolute top-4 right-4">
+              <span
+                class="text-[10px] font-bold text-white bg-orange px-2.5 py-1 rounded-full uppercase tracking-wide"
+                >Populer</span
+              >
+            </div>
+            <div
+              class="icon-circle"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(211, 114, 50, 0.2),
+                  rgba(230, 179, 99, 0.28)
+                );
+              "
+            >
+              <i class="fa-solid fa-pen-ruler text-orange text-xl"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy mb-3">
+              UI/UX Design
+            </h3>
+            <p class="text-navy/60 text-sm leading-relaxed mb-6">
+              Antarmuka yang intuitif dan berpusat pada pengguna untuk
+              meningkatkan konversi dan membangun loyalitas pelanggan.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >Figma</span
+              >
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >Prototyping</span
+              >
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >Research</span
+              >
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card fade-up delay-3">
+            <div class="icon-circle">
+              <i class="fa-solid fa-mobile-screen text-orange text-xl"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy mb-3">
+              Mobile App Solutions
+            </h3>
+            <p class="text-navy/60 text-sm leading-relaxed mb-6">
+              Aplikasi mobile kustom yang membawa bisnis Anda lebih dekat ke
+              genggaman pelanggan di platform iOS maupun Android.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >Flutter</span
+              >
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >React Native</span
+              >
+              <span
+                class="text-[11px] font-semibold text-orange bg-orange/8 px-2.5 py-1 rounded-full border border-orange/15"
+                >iOS/Android</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     PROCESS SECTION
+════════════════════════════════════════════ -->
+    <section
+      id="proses"
+      class="bg-navy py-24 lg:py-32 relative overflow-hidden"
+    >
+      <!-- Texture -->
+      <div
+        class="absolute inset-0 opacity-[0.035]"
+        style="
+          background-image: repeating-linear-gradient(
+            45deg,
+            #e6b363 0,
+            #e6b363 1px,
+            transparent 0,
+            transparent 50%
+          );
+          background-size: 20px 20px;
+        "
+      ></div>
+      <div
+        class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-tan/30 to-transparent"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16 lg:mb-20">
+          <div class="fade-up flex items-center justify-center gap-3 mb-5">
+            <div class="h-px w-10 bg-tan"></div>
+            <span
+              class="text-xs font-semibold tracking-[0.18em] text-tan uppercase"
+              >Bagaimana Kami Bekerja</span
+            >
+            <div class="h-px w-10 bg-tan"></div>
+          </div>
+          <h2
+            class="fade-up delay-1 font-display text-4xl sm:text-5xl font-bold text-cream leading-tight"
+          >
+            Proses <em class="not-italic text-tan">Tenun</em> Kami
+          </h2>
+          <p
+            class="fade-up delay-2 text-cream/50 mt-4 max-w-md mx-auto leading-relaxed"
+          >
+            Empat tahapan yang kami jalani untuk menghasilkan produk digital
+            berkualitas tinggi.
+          </p>
+        </div>
+
+        <!-- Steps — horizontal on large, vertical on mobile -->
+        <div class="flex flex-col lg:flex-row items-stretch gap-4 lg:gap-0">
+          <!-- Step 1 -->
+          <div class="step-card fade-up delay-1 flex-1">
+            <div class="step-number">01</div>
+            <div class="mb-4">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                style="
+                  background: rgba(230, 179, 99, 0.15);
+                  border: 1px solid rgba(230, 179, 99, 0.2);
+                "
+              >
+                <i class="fa-solid fa-magnifying-glass text-tan"></i>
+              </div>
+              <p
+                class="text-tan text-[11px] font-bold tracking-[0.2em] uppercase mb-1"
+              >
+                Tahap 01
+              </p>
+              <h3 class="font-display text-2xl font-bold text-cream mb-3">
+                Pintal
+              </h3>
+              <p
+                class="text-xs font-semibold tracking-wider text-orange uppercase mb-3"
+              >
+                Discovery
+              </p>
+            </div>
+            <p class="text-cream/55 text-sm leading-relaxed">
+              Memahami kebutuhan mendalam dan target audiens Anda melalui riset
+              dan konsultasi intensif.
+            </p>
+          </div>
+
+          <!-- Connector -->
+          <div class="step-connector">
+            <div class="flex items-center gap-1 opacity-30">
+              <div class="w-6 h-px bg-tan"></div>
+              <i class="fa-solid fa-chevron-right text-tan text-xs"></i>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card fade-up delay-2 flex-1">
+            <div class="step-number">02</div>
+            <div class="mb-4">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                style="
+                  background: rgba(230, 179, 99, 0.15);
+                  border: 1px solid rgba(230, 179, 99, 0.2);
+                "
+              >
+                <i class="fa-solid fa-pencil-ruler text-tan"></i>
+              </div>
+              <p
+                class="text-tan text-[11px] font-bold tracking-[0.2em] uppercase mb-1"
+              >
+                Tahap 02
+              </p>
+              <h3 class="font-display text-2xl font-bold text-cream mb-3">
+                Rakit
+              </h3>
+              <p
+                class="text-xs font-semibold tracking-wider text-orange uppercase mb-3"
+              >
+                Design
+              </p>
+            </div>
+            <p class="text-cream/55 text-sm leading-relaxed">
+              Menyusun cetak biru dan desain visual yang estetik, selaras dengan
+              identitas dan nilai brand Anda.
+            </p>
+          </div>
+
+          <!-- Connector -->
+          <div class="step-connector">
+            <div class="flex items-center gap-1 opacity-30">
+              <div class="w-6 h-px bg-tan"></div>
+              <i class="fa-solid fa-chevron-right text-tan text-xs"></i>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card fade-up delay-3 flex-1">
+            <div class="step-number">03</div>
+            <div class="mb-4">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                style="
+                  background: rgba(230, 179, 99, 0.15);
+                  border: 1px solid rgba(230, 179, 99, 0.2);
+                "
+              >
+                <i class="fa-solid fa-laptop-code text-tan"></i>
+              </div>
+              <p
+                class="text-tan text-[11px] font-bold tracking-[0.2em] uppercase mb-1"
+              >
+                Tahap 03
+              </p>
+              <h3 class="font-display text-2xl font-bold text-cream mb-3">
+                Tenun
+              </h3>
+              <p
+                class="text-xs font-semibold tracking-wider text-orange uppercase mb-3"
+              >
+                Development
+              </p>
+            </div>
+            <p class="text-cream/55 text-sm leading-relaxed">
+              Mengonversi desain menjadi produk digital yang fungsional dengan
+              kode bersih dan arsitektur solid.
+            </p>
+          </div>
+
+          <!-- Connector -->
+          <div class="step-connector">
+            <div class="flex items-center gap-1 opacity-30">
+              <div class="w-6 h-px bg-tan"></div>
+              <i class="fa-solid fa-chevron-right text-tan text-xs"></i>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card fade-up delay-4 flex-1">
+            <div class="step-number">04</div>
+            <div class="mb-4">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                style="
+                  background: rgba(230, 179, 99, 0.15);
+                  border: 1px solid rgba(230, 179, 99, 0.2);
+                "
+              >
+                <i class="fa-solid fa-rocket text-tan"></i>
+              </div>
+              <p
+                class="text-tan text-[11px] font-bold tracking-[0.2em] uppercase mb-1"
+              >
+                Tahap 04
+              </p>
+              <h3 class="font-display text-2xl font-bold text-cream mb-3">
+                Bentang
+              </h3>
+              <p
+                class="text-xs font-semibold tracking-wider text-orange uppercase mb-3"
+              >
+                Launch
+              </p>
+            </div>
+            <p class="text-cream/55 text-sm leading-relaxed">
+              Uji coba akhir menyeluruh dan peluncuran produk ke pasar luas
+              dengan dukungan purna-jual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     PORTFOLIO SECTION (Teaser)
+════════════════════════════════════════════ -->
+    <section
+      id="portofolio"
+      class="bg-cream py-24 lg:py-32 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="text-center mb-14">
+          <div class="fade-up flex items-center justify-center gap-3 mb-5">
+            <div class="h-px w-10 bg-orange"></div>
+            <span
+              class="text-xs font-semibold tracking-[0.18em] text-orange uppercase"
+              >Karya Terbaru</span
+            >
+            <div class="h-px w-10 bg-orange"></div>
+          </div>
+          <h2
+            class="fade-up delay-1 font-display text-4xl sm:text-5xl font-bold text-navy"
+          >
+            Portofolio <em class="not-italic text-orange">Kami</em>
+          </h2>
+        </div>
+
+        <!-- Portfolio grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project cards -->
+          <div
+            class="fade-up delay-1 group relative rounded-2xl overflow-hidden cursor-pointer"
+            style="aspect-ratio: 4/3"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-navy via-navy/90 to-orange/60"
+            ></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6">
+              <span
+                class="text-tan text-xs font-semibold tracking-widest uppercase mb-2"
+                >E-Commerce</span
+              >
+              <h3 class="font-display text-xl font-bold text-cream">
+                Batik Nusantara Shop
+              </h3>
+              <p class="text-cream/50 text-xs mt-1">
+                Web Development · UI/UX Design
+              </p>
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 bg-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            >
+              <div
+                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-navy text-sm"
+                ></i>
+              </div>
+            </div>
+            <!-- Pattern texture inside card -->
+            <div
+              class="absolute inset-0 opacity-10"
+              style="
+                background-image: repeating-linear-gradient(
+                  45deg,
+                  #e6b363 0,
+                  #e6b363 1px,
+                  transparent 0,
+                  transparent 50%
+                );
+                background-size: 12px 12px;
+              "
+            ></div>
+          </div>
+
+          <div
+            class="fade-up delay-2 group relative rounded-2xl overflow-hidden cursor-pointer"
+            style="aspect-ratio: 4/3"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-[#2a1a4a] via-navy to-tan/40"
+            ></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6">
+              <span
+                class="text-tan text-xs font-semibold tracking-widest uppercase mb-2"
+                >Mobile App</span
+              >
+              <h3 class="font-display text-xl font-bold text-cream">
+                GoWarung Partner
+              </h3>
+              <p class="text-cream/50 text-xs mt-1">
+                Mobile App · UI/UX Design
+              </p>
+            </div>
+            <div
+              class="absolute inset-0 bg-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            >
+              <div
+                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-navy text-sm"
+                ></i>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 opacity-10"
+              style="
+                background-image: repeating-linear-gradient(
+                  -45deg,
+                  #d37232 0,
+                  #d37232 1px,
+                  transparent 0,
+                  transparent 50%
+                );
+                background-size: 12px 12px;
+              "
+            ></div>
+          </div>
+
+          <div
+            class="fade-up delay-3 group relative rounded-2xl overflow-hidden cursor-pointer sm:col-span-2 lg:col-span-1"
+            style="aspect-ratio: 4/3"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-navy/80 via-orange/70 to-tan/80"
+            ></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6">
+              <span
+                class="text-navy text-xs font-semibold tracking-widest uppercase mb-2 bg-tan/30 w-max px-2 py-0.5 rounded"
+                >Dashboard</span
+              >
+              <h3 class="font-display text-xl font-bold text-cream">
+                AnalyticsHub Platform
+              </h3>
+              <p class="text-cream/70 text-xs mt-1">Web App · UI/UX Design</p>
+            </div>
+            <div
+              class="absolute inset-0 bg-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            >
+              <div
+                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-navy text-sm"
+                ></i>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 opacity-15"
+              style="
+                background-image: repeating-linear-gradient(
+                  90deg,
+                  #1a3a4a 0,
+                  #1a3a4a 1px,
+                  transparent 0,
+                  transparent 50%
+                );
+                background-size: 14px 14px;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 fade-up">
+          <a
+            href="#kontak"
+            class="btn-outline inline-flex items-center gap-2 px-8 py-3.5 text-sm"
+          >
+            Lihat Semua Proyek
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     CTA SECTION
+════════════════════════════════════════════ -->
+    <section id="kontak" class="cta-section py-24 lg:py-32">
+      <!-- Blobs -->
+      <div class="cta-blob -top-24 -right-24"></div>
+      <div class="cta-blob -bottom-24 -left-24"></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+        <div class="text-center max-w-2xl mx-auto">
+          <!-- Decorative icon -->
+          <div class="fade-up flex justify-center mb-8">
+            <div
+              class="w-16 h-16 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center backdrop-blur-sm"
+            >
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 6h18M3 12h18M3 18h18M8 3v18M16 3v18"
+                  stroke="#fff"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <h2
+            class="fade-up delay-1 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            Siap Menenun<br />Masa Depan<br />Digital Anda?
+          </h2>
+
+          <p
+            class="fade-up delay-2 text-white/70 text-lg leading-relaxed mb-10"
+          >
+            Hubungi kami sekarang dan dapatkan konsultasi gratis bersama tim
+            ahli kami. Bersama, kita tenun cerita sukses bisnis Anda.
+          </p>
+
+          <div class="fade-up delay-3 flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:tenunkodedigital@gmail.com?subject=Konsultasi%20Proyek%20Digital&body=Halo%20Tim%20TenunKode%2C%0A%0ASaya%20tertarik%20untuk%20menggunakan%20layanan%20Anda.%20Berikut%20sedikit%20informasi%20mengenai%20kebutuhan%20saya%3A%0A%0ANama%20%3A%20%0AInstansi%2FBisnis%20%3A%20%0AKebutuhan%20%3A%20%0A%0ASaya%20berharap%20dapat%20berdiskusi%20lebih%20lanjut.%20Terima%20kasih!"
+              class="btn-navy px-8 py-4 text-sm inline-flex items-center gap-2.5"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              Kirim Email Sekarang
+            </a>
+            <a
+              href="https://wa.me/6281393684093?text=Halo%20TenunKode!%20%F0%9F%91%8B%0A%0ASaya%20ingin%20bertanya%20lebih%20lanjut%20mengenai%20layanan%20yang%20Anda%20tawarkan.%0A%0ASaya%20%5Bnama%20Anda%5D%20dari%20%5Binstansi%2Fbisnis%5D%20dan%20sedang%20membutuhkan%20solusi%20digital%20untuk%20%5Bjelaskan%20kebutuhan%5D.%0A%0AApakah%20bisa%20kita%20diskusi%20lebih%20lanjut%3F%20Terima%20kasih!%20%F0%9F%99%8F"
+              target="_blank"
+              class="inline-flex items-center gap-2.5 px-8 py-4 text-sm font-semibold text-white rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Chat via WhatsApp
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div
+            class="fade-up delay-4 flex flex-wrap justify-center gap-6 mt-14 pt-10 border-t border-white/20"
+          >
+            <div class="flex items-center gap-2 text-white/70 text-sm">
+              <i class="fa-solid fa-shield-halved text-white/60"></i>
+              <span>Konsultasi Gratis</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/70 text-sm">
+              <i class="fa-solid fa-clock text-white/60"></i>
+              <span>Respons &lt; 24 Jam</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/70 text-sm">
+              <i class="fa-solid fa-handshake text-white/60"></i>
+              <span>NDA Tersedia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+    <footer class="bg-navy border-t border-cream/8">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-6"
+        >
+          <!-- Logo & Copyright -->
+          <div class="flex flex-col items-center sm:items-start gap-2">
+            <a href="#hero" class="flex items-center gap-2.5 group">
+              <img
+                src="tenunkodelogo.png"
+                alt="TenunKode"
+                class="h-7 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+              />
+              <span
+                class="font-display font-bold text-cream text-sm tracking-tight"
+                >TenunKode</span
+              >
+            </a>
+            <p class="text-cream/35 text-xs">
+              &copy; TenunKode 2026. All rights reserved.
+            </p>
+          </div>
+
+          <!-- Nav links (footer) -->
+          <div class="flex items-center gap-5">
+            <a
+              href="#layanan"
+              class="text-cream/40 hover:text-tan text-xs font-medium transition-colors"
+              >Layanan</a
+            >
+            <a
+              href="#proses"
+              class="text-cream/40 hover:text-tan text-xs font-medium transition-colors"
+              >Proses</a
+            >
+            <a
+              href="#portofolio"
+              class="text-cream/40 hover:text-tan text-xs font-medium transition-colors"
+              >Portofolio</a
+            >
+            <a
+              href="#kontak"
+              class="text-cream/40 hover:text-tan text-xs font-medium transition-colors"
+              >Kontak</a
+            >
+          </div>
+
+          <!-- Social links -->
+          <div class="flex items-center gap-2.5">
+            <a href="#" aria-label="Instagram" class="social-link"
+              ><i class="fa-brands fa-instagram text-sm"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn" class="social-link"
+              ><i class="fa-brands fa-linkedin-in text-sm"></i
+            ></a>
+            <a href="#" aria-label="Twitter/X" class="social-link"
+              ><i class="fa-brands fa-x-twitter text-sm"></i
+            ></a>
+            <a href="#" aria-label="Dribbble" class="social-link"
+              ><i class="fa-brands fa-dribbble text-sm"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+    <script>
+      /* ── Navbar scroll effect ── */
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) navbar.classList.add("navbar-scroll");
+        else navbar.classList.remove("navbar-scroll");
+      });
+
+      /* ── Mobile menu toggle ── */
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const hb1 = document.getElementById("hb1");
+      const hb2 = document.getElementById("hb2");
+      const hb3 = document.getElementById("hb3");
+      let menuOpen = false;
+
+      hamburger.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle("open", menuOpen);
+        if (menuOpen) {
+          hb1.style.transform = "rotate(45deg) translateY(8px)";
+          hb2.style.opacity = "0";
+          hb3.style.transform = "rotate(-45deg) translateY(-8px)";
+          hb3.style.width = "24px";
+        } else {
+          hb1.style.transform = "";
+          hb2.style.opacity = "";
+          hb3.style.transform = "";
+          hb3.style.width = "";
+        }
+      });
+
+      function closeMobileMenu() {
+        menuOpen = false;
+        mobileMenu.classList.remove("open");
+        hb1.style.transform = "";
+        hb2.style.opacity = "";
+        hb3.style.transform = "";
+        hb3.style.width = "";
+      }
+
+      /* ── Scroll-triggered fade-in ── */
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+
+      /* ── Smooth scroll for anchor links ── */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            const offset = 68;
+            window.scrollTo({
+              top: target.offsetTop - offset,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
